@@ -220,7 +220,7 @@ module Spree
 
     # I use this to have add in a staging path prefix to not pollute production
     # @return returns '/' + ENV['PRODUCT_IMPORT_S3_PREFIX'] or '' if var is blank
-    def s3_path_prefix
+    def self.s3_path_prefix
       # urge to inline RISING
       # (prefix = ENV['PRODUCT_IMPORT_S3_PREFIX']).blank? ? '' : '/' + prefix
       unless (prefix = ENV['PRODUCT_IMPORT_S3_PREFIX']).blank?
