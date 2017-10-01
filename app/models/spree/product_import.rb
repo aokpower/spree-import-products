@@ -20,7 +20,7 @@ module Spree
       #   AWS_SECRET_ACCESS_KEY
       attachment_config = {
         url: ':s3_domain_url',
-        path: s3_path_prefix + '/spree/product_imports/data-files/:basename_:timestamp.:extension',
+        path: ENV['PRODUCT_IMPORT_S3_PREFIX'].to_s + '/spree/product_imports/data-files/:basename_:timestamp.:extension',
         storage: :s3,
         s3_protocol: :https,
         s3_credentials: {
@@ -216,18 +216,6 @@ module Spree
     def separator_char
       # unclear (to me) how separatorChar is defined by user.
       separatorChar || ','
-    end
-
-    # I use this to have add in a staging path prefix to not pollute production
-    # @return returns '/' + ENV['PRODUCT_IMPORT_S3_PREFIX'] or '' if var is blank
-    def self.s3_path_prefix
-      # urge to inline RISING
-      # (prefix = ENV['PRODUCT_IMPORT_S3_PREFIX']).blank? ? '' : '/' + prefix
-      unless (prefix = ENV['PRODUCT_IMPORT_S3_PREFIX']).blank?
-        '/' + prefix
-      else
-        ''
-      end
     end
 
     def create_product(params_hash)
