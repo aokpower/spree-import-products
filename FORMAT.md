@@ -1,6 +1,6 @@
 # Spreadsheet Format
 
-ALL HEADERS NEED TO BE LOWERCASE!
+ALL HEADERS NEED TO BE !lowercase!
 
 ## Headers
 - [sku](#sku)
