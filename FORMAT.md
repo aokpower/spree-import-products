@@ -2,17 +2,19 @@
 
 ALL HEADERS NEED TO BE LOWERCASE!
 
-## Contents
+## Headers
 - [sku](#sku)
 - [name](#name)
 - [description](#description)
 - [cost price](#cost-price)
 - [price](#price)
 - [Taxonomies](#taxonomies)
-- [Meta Title ](#meta-title)
+- [Meta Title](#meta-title)
 - [Meta Description](#meta-description)
 - [Meta Keywords](#meta-keywords)
 - [slug](#slug)
+- [Tax Category id](#tax-category-id)
+- [Shipping Category id](#shipping-category-id)
 
 ### SKU
 Nothing special going on here
@@ -44,3 +46,9 @@ Nothing special going on here
 
 ### Slug
 This is taken care of by the exporter, don't touch this yourself.
+
+### Tax Category id
+An number corresponding to an internal Spree tax category ID
+
+### Shipping Category id
+An number corresponding to an internal Spree shipping category ID
